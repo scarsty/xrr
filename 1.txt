@@ -1,0 +1,31 @@
+Silicon (Si) Z = 14
+Energy = 8041.50 eV 
+
+Atomic Properties
+Atomic Weight : 28.086
+Photoabsorption Cross Section : 60.63 cm^2/g 
+Inelastic Cross Section : 9.5347E-02 cm^2/g 
+f1 : 14.26 
+f2 : 0.3254 
+
+
+Material Properties
+Density : 2.33 g/cm^3
+Delta : 7.5934E-06
+Beta : 1.7333E-07 
+Attenuation Length : 70.68 microns 
+Critical Angle: 0.223 degrees 
+
+
+Electron Binding Energies (eV)
+  L3      99.8 (ref.4)
+  L2     100.4 (ref.4)
+  L1     149.7 (ref.2)
+  K1    1838.9 (ref.1)
+ 
+Electron Level Widths (eV)
+  L3     0.014
+  L2     0.015
+  L1     1.030
+  K      0.480
+
