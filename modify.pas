@@ -1,9 +1,11 @@
 unit modify;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, Buttons;
 
 type
@@ -37,8 +39,8 @@ var
 
 implementation
 
-uses Unit1;
-{$R *.dfm}
+uses mainform;
+{$R *.lfm}
 
 procedure TForm3.ScrollBar1Change(Sender: TObject);
 begin

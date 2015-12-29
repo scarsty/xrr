@@ -1,0 +1,64 @@
+object Form2: TForm2
+  Left = 146
+  Height = 480
+  Top = 99
+  Width = 696
+  BorderIcons = [biSystemMenu]
+  Caption = 'Form2'
+  ClientHeight = 480
+  ClientWidth = 696
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  LCLVersion = '1.6.0.1'
+  object Label1: TLabel
+    Left = 528
+    Height = 13
+    Top = 232
+    Width = 18
+    Caption = 'd=?'
+    ParentColor = False
+  end
+  object Panel1: TPanel
+    Left = 32
+    Height = 345
+    Top = 24
+    Width = 465
+    BevelInner = bvLowered
+    Caption = 'Panel1'
+    ClientHeight = 345
+    ClientWidth = 465
+    Color = clWhite
+    ParentColor = False
+    TabOrder = 0
+    object Image1: TImage
+      Left = 6
+      Height = 329
+      Top = 6
+      Width = 449
+    end
+  end
+  object BitBtn1: TBitBtn
+    Left = 528
+    Height = 25
+    Top = 80
+    Width = 113
+    Caption = '打开数据文件'
+    OnClick = BitBtn1Click
+    TabOrder = 1
+  end
+  object BitBtn2: TBitBtn
+    Left = 528
+    Height = 25
+    Top = 144
+    Width = 113
+    Caption = '寻找极大点估算d'
+    TabOrder = 2
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = '*.dat|*.dat'
+    left = 536
+    top = 24
+  end
+end
