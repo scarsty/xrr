@@ -151,11 +151,6 @@ begin
 end;
 }
 
-function CAbs(c1: Complex): extended;
-begin
-  Result := sqrt(c1.re * c1.re + c1.im * c1.im);
-end;
-
 function ComputeX(n2, n3: Complex; rough1, rough2, d2, theta1: extended): Complex;
 var
   r12, r23, r_12, r_23, k, k1, k2, k3, ctheta1{, ctheta2, ctheta3}: Complex;
@@ -228,9 +223,9 @@ begin
   th_end := strtofloat(edit9.Text);
   n := strtoint(edit8.Text);
   }
-  RN := CAbs(ComputeX(n2, n3, rough1, rough2, d2, 1 / 10000 / 180 * pi));
+  RN := cmod(ComputeX(n2, n3, rough1, rough2, d2, 1 / 10000 / 180 * pi));
 
-  R := CAbs(ComputeX(n2, n3, rough1, rough2, d2, th_start / 180 * pi)) / RN;
+  R := cmod(ComputeX(n2, n3, rough1, rough2, d2, th_start / 180 * pi)) / RN;
   //Image1.Canvas.LineTo(Ox, Oy);
   Image1.Canvas.Pen.Color := clWhite;
   Image1.Canvas.LineTo(0, Oy - trunc(log10(R) * m));
@@ -242,7 +237,7 @@ begin
     for i := trunc(n * th_start) + 1 to trunc(n * th_end) do
     begin
       th := i / n;
-      R := CAbs(ComputeX(n2, n3, rough1, rough2, d2, th / 180 * pi)) / RN;
+      R := cmod(ComputeX(n2, n3, rough1, rough2, d2, th / 180 * pi)) / RN;
       Image1.Canvas.LineTo(trunc((i / n - th_start) * 500 / (th_end - th_start)) + Ox,
         Oy - trunc(log10(R) * m));
       //showmessage(floattostr(R));
@@ -253,7 +248,7 @@ begin
     for i := trunc(n * th_start) + 1 to trunc(n * th_end) do
     begin
       th := i / n;
-      R := CAbs(ComputeX(n2, n3, rough1, rough2, d2, th / 180 * pi)) / RN;
+      R := cmod(ComputeX(n2, n3, rough1, rough2, d2, th / 180 * pi)) / RN;
       Image1.Canvas.LineTo(trunc((i / n - th_start) * 500 / (th_end - th_start)) + Ox,
         Oy + m - trunc(R * R * m));
       //showmessage(floattostr(R));
@@ -351,13 +346,13 @@ begin
     th_end := strtofloat(edit9.Text);
 
     n := StrToInt(Form3.Edit1.Text);
-    RN := CAbs(ComputeX(n2, n3, rough1, rough2, d2, 1 / 10000 / 180 * pi));
+    RN := cmod(ComputeX(n2, n3, rough1, rough2, d2, 1 / 10000 / 180 * pi));
     line := '';
 
     for i := trunc(n * th_start) + 1 to trunc(n * th_end) do
     begin
       th := i / n;
-      R := CAbs(ComputeX(n2, n3, rough1, rough2, d2, th / 180 * pi)) / RN;
+      R := cmod(ComputeX(n2, n3, rough1, rough2, d2, th / 180 * pi)) / RN;
       line := floattostr(th) + chr(9) + floattostr(R * R) + Chr(13) + Chr(10);
       filewrite(h, line[1], length(line));
     end;
