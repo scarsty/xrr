@@ -201,8 +201,8 @@ begin
   //showmessage(floattostr((cabs(r12)+cabs(r23))/(1+cabs(r12)*cabs(r23))));
 end;
 
-procedure TForm1.DrawCurve(n2, n3: Complex;
-  rough1, rough2, d2, th_start, th_end: extended; n, m, Ox, Oy, isLg: integer);
+procedure TForm1.DrawCurve(n2, n3: Complex; rough1, rough2, d2, th_start, th_end: extended;
+  n, m, Ox, Oy, isLg: integer);
 var
   i: integer;
   th, R, RN: extended;
@@ -354,9 +354,9 @@ begin
       th := i / n;
       R := cmod(ComputeX(n2, n3, rough1, rough2, d2, th / 180 * pi)) / RN;
       line := floattostr(th) + chr(9) + floattostr(R * R) + Chr(13) + Chr(10);
-      filewrite(h, line[1], length(line));
+      FileWrite(h, line[1], length(line));
     end;
-    fileclose(h);
+    FileClose(h);
   end;
 
 end;

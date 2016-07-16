@@ -40,6 +40,7 @@ var
 implementation
 
 uses mainform;
+
 {$R *.lfm}
 
 procedure TForm3.ScrollBar1Change(Sender: TObject);
@@ -56,14 +57,14 @@ end;
 procedure TForm3.ScrollBar2Change(Sender: TObject);
 begin
   Form1.edit10.Text := floattostr(ScrollBarx.Position / 100);
-  Form1.edit9.Text := floattostr((ScrollBarx.Position + ScrollBar2.Position)/ 100);
+  Form1.edit9.Text := floattostr((ScrollBarx.Position + ScrollBar2.Position) / 100);
   Form1.Curve;
 end;
 
 procedure TForm3.ScrollBarxChange(Sender: TObject);
 begin
   Form1.edit10.Text := floattostr(ScrollBarx.Position / 100);
-  Form1.edit9.Text := floattostr((ScrollBarx.Position + ScrollBar2.Position)/ 100);
+  Form1.edit9.Text := floattostr((ScrollBarx.Position + ScrollBar2.Position) / 100);
   Form1.Curve;
 end;
 

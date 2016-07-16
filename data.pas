@@ -1,4 +1,4 @@
-unit data;
+unit Data;
 
 {$MODE Delphi}
 
@@ -25,9 +25,9 @@ type
 
 var
   Form2: TForm2;
-  d2: Extended;
-  th, lgR: array of Extended;
-  //th, lgR:Extended;
+  d2: extended;
+  th, lgR: array of extended;
+//th, lgR:Extended;
 
 implementation
 
@@ -39,18 +39,19 @@ var
   str, num: string;
   c: Char;
   isth: Boolean;
-  fn1 :TFileName;
+  fn1: TFileName;
 begin
   OpenDialog1.Execute;
   fn1 := OpenDialog1.FileName;
   f1 := FileOpen(fn1, fmOpenRead);
   str := '';
   n := 3;
-//统计回车符数,确定组数,n有余量避免意外
+  //统计回车符数,确定组数,n有余量避免意外
   while FileRead(f1, c, 1) = 1 do
-    if c=chr(13) then n := n + 1;
+    if c = chr(13) then
+      n := n + 1;
 
-//提取数据
+  //提取数据
 
   //Image1.Canvas.Pen.Color := clRed;
   setlength(th, i);
@@ -59,18 +60,21 @@ begin
   i := 1;
   FileSeek(f1, 0, 0);
   while FileRead(f1, c, 1) = 1 do
-  //showmessage(c);
+    //showmessage(c);
   begin
-    if ((c>='0') and (c<='9')) or (c='.') or (c='E') or (c='e') or (c='-') then begin
+    if ((c >= '0') and (c <= '9')) or (c = '.') or (c = 'E') or (c = 'e') or (c = '-') then
+    begin
       str := str + c;
     end
-    else if isth = True and (str<>'') then begin
+    else if isth = True and (str <> '') then
+    begin
       th[i] := strtofloat(str);
       //showmessage(str);
       str := '';
       isth := False;
     end
-    else if isth = False and (str<>'') then begin
+    else if isth = False and (str <> '') then
+    begin
       lgR[i] := strtofloat(str);
       str := '';
       isth := True;
@@ -81,7 +85,7 @@ begin
   FileClose(f1);
   Image1.Canvas.Pen.Color := clRed;
   for i := 1 to n do
-    Image1.Canvas.LineTo(trunc(450/n*i), 300 - trunc(lgR[i]*3));
+    Image1.Canvas.LineTo(trunc(450 / n * i), 300 - trunc(lgR[i] * 3));
 
 end;
 

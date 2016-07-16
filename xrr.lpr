@@ -3,7 +3,8 @@ program xrr;
 {$MODE Delphi}
 
 uses
-  Forms, Interfaces,
+  Forms,
+  Interfaces,
   mainform {Form1},
   modify in 'modify.pas' {Form3},
   hiddensetting {Form4};

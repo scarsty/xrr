@@ -35,8 +35,8 @@ uses mainform;
 
 procedure TForm4.BitBtn1Click(Sender: TObject);
 begin
-  Form1.Edit1.Text := floattostr(7.0787E-06*strtofloat(Edit1.Text)/2.20);
-  Form1.Edit2.Text := floattostr(1.1310E-08*strtofloat(Edit1.Text)/2.20);
+  Form1.Edit1.Text := floattostr(7.0787E-06 * strtofloat(Edit1.Text) / 2.20);
+  Form1.Edit2.Text := floattostr(1.1310E-08 * strtofloat(Edit1.Text) / 2.20);
   Close;
   Form1.Curve;
 end;
